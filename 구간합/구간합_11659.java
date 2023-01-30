@@ -1,3 +1,5 @@
+package 구간합;
+
 import javax.sql.RowSetInternal;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,7 +33,7 @@ public class 구간합_11659 {
             bw.write(input[b] - input[a-1]+"\n");
         }
         bw.flush();
-        
+
     }
 
 
