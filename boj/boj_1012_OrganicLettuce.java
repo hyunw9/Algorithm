@@ -47,8 +47,6 @@ public class boj_1012_OrganicLettuce {
             }
             System.out.println("bug = " + bug);
         }
-
-
     }
     private static void dfs(int x, int y){
         int[] dx = { 0, 0, -1, +1};                //0,-1 상 , 0,+1 하 , -1,0 좌 , +1,0 우
