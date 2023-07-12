@@ -25,6 +25,7 @@ public class boj_2805_나무자르기 {
         for (int i = 0; i < trees.length; i++) {
             trees[i] = Integer.parseInt(st.nextToken());
             right = Math.max(right, trees[i]);
+            left = Math.min(left,trees[i]);
         }
         //검색의 범위는 최소값에서 최대값
 
