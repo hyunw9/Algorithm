@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.jar.JarEntry;
 
-public class boj_14502_laboratory {
+public class boj_14502_연구소 {
     static int N;
     static int M;
     static int []dx = {-1,1,0,0};
@@ -39,9 +38,6 @@ public class boj_14502_laboratory {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-
-
-
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 dupmap[i][j] = map[i][j];
@@ -52,25 +48,24 @@ public class boj_14502_laboratory {
                 for (int k = 0; k < 3; k++) {
                     if(dupmap[i][j]== 0){
                         dupmap[i][j] =1;
-                        Loc loc = new Loc(i,j);
-                        visited[i][j]= true;
-                        deque.addFirst(loc);
-                        bfs(loc,dupmap);
                     }
+                    Loc loc = new Loc(i,j);
+                    visited[i][j]= true;
+                    deque.addFirst(loc);
+                    bfs(dupmap);
                     for (int g = 0; g < N; g++) {
                         for (int h = 0; h < M; h++) {
                             dupmap[g][h] = map[g][h];
                         }
                     }
+                    visited =new boolean[N][M];
                 }
             }
-            visited =new boolean[N][M];
-
         }
         System.out.println(array);
         System.out.println(Collections.max(array));
             }
-         public static void bfs(Loc loc,int [][]dup ){
+         public static void bfs(int [][]dup ){
 
              while(!deque.isEmpty()){
                  Loc current = deque.poll();
@@ -78,18 +73,16 @@ public class boj_14502_laboratory {
                      int nx = current.x + dx[i];
                      int ny = current.y + dy[i];
                      Loc next = new Loc(nx,ny);
-                     if(nx >=0 && nx<N && ny>=0 && ny<M &&(dup[nx][ny] == 0 && !visited[nx][ny])){
+                     if(next.x >=0 && next.x<N && next.y>=0 && next.y<M &&(dup[next.x][next.y] == 0 && !visited[next.x][next.y])){
                             safety+=1;
-                             deque.add(next);
-                             visited[next.x][next.y] = true;
+                            visited[next.x][next.y] = true;
+                            deque.add(next);
                      }
                  }
              }
              array.add(safety);
              safety=0;
-
          }
-
         }
 
 
