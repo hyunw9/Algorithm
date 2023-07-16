@@ -38,52 +38,28 @@ public class boj_14502_연구소 {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                dupmap[i][j] = map[i][j];
-            }
+        dfs(0);
+    }
+        public static void dfs(int wall){
+        if(wall == 3 ){
+            bfs();
+            return;
         }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                for (int k = 0; k < 3; k++) {
-                    if(dupmap[i][j]== 0){
-                        dupmap[i][j] =1;
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < M; j++) {
+                    if(map[i][j] == 0){
+                        map[i][j] = 1;
+                        dfs(wall+1);
+                        map[i][j] = 0;
+
                     }
-                    Loc loc = new Loc(i,j);
-                    visited[i][j]= true;
-                    deque.addFirst(loc);
-                    bfs(dupmap);
-                    for (int g = 0; g < N; g++) {
-                        for (int h = 0; h < M; h++) {
-                            dupmap[g][h] = map[g][h];
-                        }
-                    }
-                    visited =new boolean[N][M];
                 }
             }
         }
-        System.out.println(array);
-        System.out.println(Collections.max(array));
-            }
-         public static void bfs(int [][]dup ){
 
-             while(!deque.isEmpty()){
-                 Loc current = deque.poll();
-                 for (int i = 0; i < 4; i++) {
-                     int nx = current.x + dx[i];
-                     int ny = current.y + dy[i];
-                     Loc next = new Loc(nx,ny);
-                     if(next.x >=0 && next.x<N && next.y>=0 && next.y<M &&(dup[next.x][next.y] == 0 && !visited[next.x][next.y])){
-                            safety+=1;
-                            visited[next.x][next.y] = true;
-                            deque.add(next);
-                     }
-                 }
-             }
-             array.add(safety);
-             safety=0;
-         }
+         public static void bfs(){
+//        ArrayDeque<int[]>
+
+
         }
-
-
-
+}

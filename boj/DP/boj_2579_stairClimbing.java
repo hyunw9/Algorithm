@@ -1,4 +1,4 @@
-package boj;
+package boj.DP;
 
 import java.util.Scanner;
 
