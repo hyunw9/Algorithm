@@ -59,5 +59,6 @@ public class 숫자문자열과영단어 {
         }
         int answer = Integer.parseInt(sb.toString());
         return answer;
+
     }
 }
