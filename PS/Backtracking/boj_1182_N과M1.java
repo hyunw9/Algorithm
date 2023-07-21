@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_1182_부분수열의합 {
+public class boj_1182_N과M1 {
     static int N;
     static int M;
     static boolean []used;
@@ -25,7 +25,7 @@ public class boj_1182_부분수열의합 {
             sb.append(s.trim()+ "\n");
         }
 
-            for (int i = 0; i < N; i++) {
+            for (int i = 1; i < N+1; i++) {
                 if(!used[i]){
                     used[i]=true;
                     backtracking(cnt+1, s+ " " +i);
