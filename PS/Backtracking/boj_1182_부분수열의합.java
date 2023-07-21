@@ -33,6 +33,6 @@ public class boj_1182_부분수열의합 {
         }
 
         backtrack(sum + arr[start], start + 1); // 현재 원소를 포함하는 경우
-        backtrack(sum, start + 1); // 현재 원소를 포함하지 않는 경우
+        backtrack(sum, start + 1); // 현재 원소를 포함하지 않는 경우입니다.
     }
 }
