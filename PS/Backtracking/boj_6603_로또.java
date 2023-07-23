@@ -37,7 +37,7 @@ public class boj_6603_로또 {
         for (int i = num; i < K; i++) {
                 if(!visited[i]){
                     visited[i]=true;
-                    backtrack(i,cnt+1,s+" "+ S[i]);
+                    backtrack(i,cnt+1,s+    " "+ S[i]);
                     visited[i]=false;
                 }
             }
