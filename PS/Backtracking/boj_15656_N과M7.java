@@ -1,10 +1,12 @@
 package PS.Backtracking;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_15655_N과M6 {
+public class boj_15656_N과M7 {
     static int[] arr;
     static  int N ;
     static int M;
@@ -35,12 +37,10 @@ public class boj_15655_N과M6 {
             return;
         }
 
-        for (int i = idx; i < N; i++) {
-           if(!visited[i]){
-               visited[i]=true;
-               bt(s +" "+ arr[i],depth+1,i+1);
-               visited[i]=false;
-           }
+        for (int i=0; i < N; i++) {
+                System.out.println(arr[i]);
+                bt(s +" "+ arr[i],depth+1,i+1);
+            }
         }
     }
-}
+
