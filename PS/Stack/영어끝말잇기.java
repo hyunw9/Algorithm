@@ -9,7 +9,6 @@ public class 영어끝말잇기 {
         int n = 3;
         String[] words= {"tank", "tick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
         solution(n, words);
-//"hello", "one", "even", "never", "now", "world", "raw"
         //2
     }
     public static int[]solution(int n , String[] words){
