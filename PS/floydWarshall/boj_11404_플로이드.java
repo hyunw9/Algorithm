@@ -20,13 +20,14 @@ public class boj_11404_플로이드 {
         dist = new int[N+1][N+1];
         for (int i = 1; i <=N; i++) {
             for (int j = 1; j <=N ; j++) {
-
+                //배열 무한대로 값 초기화
                 dist[i][j] = INF;
             }
         }
         StringTokenizer st;
 
         for (int i = 1; i <= M; i++) {
+            //a에서 b로 가는 간선의 값 갱신. 현재 값보다, 입력받는 c가 작다면 교체
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
@@ -36,6 +37,7 @@ public class boj_11404_플로이드 {
         floyd();
         for (int i = 1; i <=N ; i++) {
             for (int j = 1; j <= N; j++) {
+                //거리가 무한이거나 i==j, 자기 자신인 경우는 거리 0 이므로 갱신
                 if(i==j||dist[i][j]==INF){
                     dist[i][j]=0;
                 }
@@ -51,6 +53,8 @@ public class boj_11404_플로이드 {
         for (int k = 1; k <=N ; k++) {
             for (int i = 1; i <=N ; i++) {
                 for (int j = 1; j <=N ; j++) {
+                    //i, j, k 가 있다고 할 시, i 에서 j 로 가는 비용을 계산한다.
+                    // i 에서 k로 갔다가 k 에서 j 로 가는 거리가 직접 i->j 로 가는 값 보다 더 작다면 교체한다.
                     dist[i][j] =Math.min(dist[i][j],dist[i][k]+dist[k][j]);
                 }
             }

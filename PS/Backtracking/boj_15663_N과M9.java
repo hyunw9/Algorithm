@@ -22,6 +22,8 @@ public class boj_15663_N과M9 {
         M = Integer.parseInt(st.nextToken());
         arr = new int[N];
         used = new boolean[N];
+
+        //중복 확인용 배열
         store = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
@@ -47,6 +49,7 @@ public class boj_15663_N과M9 {
         }*/
         if (cnt == M){
             s=s.trim();
+            //중복된 수열을 출력하면 안되기 때문에, 중복 체크 구문을 추가하였습니다. 시간복잡도 O(N)
             if(store.contains(s)){
                 return;
             }
@@ -58,6 +61,7 @@ public class boj_15663_N과M9 {
         }
 
         for (int i = 0; i < N; i++) {
+            //사용 여부 확인하여 백트래킹
             if(!used[i]){
                 used[i] = true;
                 bt(s+arr[i]+ " " , cnt+1);
