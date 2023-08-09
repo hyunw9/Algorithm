@@ -17,7 +17,6 @@ public class boj_1541_잃어버린괄호 {
             this.sign = sign;
         }
     }
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -44,6 +43,8 @@ public class boj_1541_잃어버린괄호 {
 
             }
         }
+        // 80-20+30
+
         //- 부호가 있으면 다른 - 를 만나기 전까지 +부호들을 -로 바꿔줍니다 (괄호 적용)
         arr.add(new hang(Integer.parseInt(String.valueOf(num)), sign));
         for (int i = 0; i < arr.size(); i++) {
@@ -58,8 +59,8 @@ public class boj_1541_잃어버린괄호 {
             }
         }
         for (int i = 0; i < arr.size(); i++) {
-            System.out.println("arr.get(i).sign = " + arr.get(i).sign);
-            System.out.println("arr.get(i).num = " + arr.get(i).num);
+//            System.out.println("arr.get(i).sign = " + arr.get(i).sign);
+//            System.out.println("arr.get(i).num = " + arr.get(i).num);
             if (arr.get(i).sign == '+') {
                 sum += arr.get(i).num;
             } else {
