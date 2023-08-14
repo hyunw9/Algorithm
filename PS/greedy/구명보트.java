@@ -11,10 +11,11 @@ public class 구명보트 {
         solution(people,limit);
     }
     public static int solution(int[] people, int limit){
-        boolean[] saved = new boolean[people.length];
+        //setup
         int answer = 0;
         ArrayDeque<Integer> dq = new ArrayDeque<>();
         Arrays.sort(people);
+
         for (int i = 0; i < people.length; i++) {
             dq.addLast(people[i]);
         }
@@ -22,6 +23,7 @@ public class 구명보트 {
             int first = dq.getFirst();
             int last = dq.getLast();
             int sum = first + last;
+
             if (sum > limit){
                 dq.pollLast();
                 answer+=1;
