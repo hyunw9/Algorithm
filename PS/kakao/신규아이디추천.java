@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 
 public class 신규아이디추천 {
     static String new_id;
-    static HashMap<Character, Boolean> speacialCase = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
