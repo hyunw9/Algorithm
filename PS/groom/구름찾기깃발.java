@@ -47,4 +47,4 @@ public class 구름찾기깃발 {
         System.out.println(answer);
     }
     }
-}
+
