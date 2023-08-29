@@ -30,7 +30,7 @@ public class boj_1916_최소비용구하기 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         //도시 개수
         N = Integer.parseInt(st.nextToken());
-        st= new StringTokenizer(br.readLine());
+        st = new StringTokenizer(br.readLine());
         //버스 개수
         M = Integer.parseInt(st.nextToken());
 
