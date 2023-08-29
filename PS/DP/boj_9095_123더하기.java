@@ -13,7 +13,7 @@ public class boj_9095_123더하기 {
         StringBuilder sb = new StringBuilder();
 
         int T =Integer.parseInt(st.nextToken());
-        int[] dp ;
+        int[] dp;
         int[] arr = new int[T+1];
         int max= 0;
         for (int i = 0; i < T; i++) {
