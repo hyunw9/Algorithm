@@ -1,60 +1,47 @@
 package prgmrs;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class 숫자짝궁 {
     public static void main(String[] args) {
         String X = "100";
-        String Y = "2345";
+        String Y = "100";
         System.out.println(solution(X, Y));
     }
 
-    private static String solution(String x, String y) {
-        HashMap<Character, Integer> xmap = new HashMap<>();
-        HashMap<Character, Integer> ymap = new HashMap<>();
-        ArrayList<Integer> arr = new ArrayList<>();
-        StringBuilder sb= new StringBuilder();
+    private static String solution(String X, String Y) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        ArrayList<Character> arr = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < X.length(); i++) {
+            char now = X.charAt(i);
+            if(map.get(now)!=null){
+                map.put(now, map.get(now)+1);
+            }else{
+                map.put(now,1);
+            }
 
-        for (int i = 0; i < x.length(); i++) {
-            char now = x.charAt(i);
-            if (xmap.get(now) == null) {
-                xmap.put(now, 1);
-            } else {
-                xmap.put(now, xmap.get(now) + 1);
-            }
+
         }
-        for (int i = 0; i < y.length(); i++) {
-            char now = y.charAt(i);
-            if (ymap.get(now) == null) {
-                ymap.put(now, 1);
-            } else {
-                ymap.put(now, ymap.get(now) + 1);
+        for (int i = 0; i < Y.length(); i++) {
+            char now = Y.charAt(i);
+            if(map.get(now)==null) {
+                continue;
             }
-        }
-        if (xmap.size() < ymap.size()) {
-            for (Character key : xmap.keySet()) {
-                if (ymap.get(key) != null) {
-                    int cnt = xmap.get(key);
-                    cnt = Math.min(cnt, ymap.get(key));
-                    for (int i = 0; i < cnt; i++) {
-                        arr.add(Character.getNumericValue(key));
-                    }
-                }
+
+            if(map.get(now)>0){
+                arr.add(now);
+                map.put(now,map.get(now)-1);
             }
         }
         Collections.sort(arr,((o1, o2) -> {return o2-o1;}));
-
-        if(arr.size()==0){
-            return sb.append("-1").toString();
+        for (int i = 0; i < arr.size(); i++) {
+            sb.append(arr.get(i));
         }
-        else{
-            for (int i = 0; i < arr.size(); i++) {
-                if(i >0&& arr.get(i-1) == 0 && arr.get(i)== 0) continue;
-                sb.append(arr.get(i));
-            }
-        }
-        return sb.toString();
+        String result = sb.toString();
+        if(result.isEmpty()) return "-1";
+        if(result.replace("0","").isEmpty()) return "0";
+        return result;
     }
 }
