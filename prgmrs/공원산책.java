@@ -51,7 +51,7 @@ public class 공원산책 {
         return answer;
     }
 
-    private static boolean checkOutofParkRange(int y, int x) {
+    private static boolean checkOutofParkRange (int y, int x) {
         if (y < 0 || x < 0 || y >= map.length || x >= map[0].length || map[y][x] == 'X') {
             return false;
         }
