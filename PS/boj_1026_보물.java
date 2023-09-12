@@ -30,6 +30,9 @@ public class boj_1026_보물 {
         for (int i = N; i < N*2; i++) {
             arr[i] = arr2.get(i-N);
         }
+
+        //List로 만들고 array join 하면 더 간단할것 같습니다.
+
         for (int i = 0; i < arr.length/2; i++) {
             answer += arr[i] * arr[arr.length-1-i];
 
