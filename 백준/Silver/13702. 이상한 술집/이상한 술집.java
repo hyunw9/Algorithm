@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -27,12 +26,6 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
             high = Math.max(high,arr[i]);
-        }
-
-        if( K == 0){
-            bw.write(0+"");
-            close();
-            return;
         }
 
         while(low<=high){
