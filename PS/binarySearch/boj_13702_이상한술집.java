@@ -32,10 +32,10 @@ public class boj_13702_이상한술집 {
         while(low<=high){
             mid =( high + low)/2;
 
-            if(mid == 0) {
+            /*if(mid == 0) {
                 bw.write(0+"");
                 break;
-            }
+            }*/
             int val = 0;
             //반복을 돌며 몇명에게 나누어 줄 수 있는지 판별합니다.
             for (int j : arr) {
