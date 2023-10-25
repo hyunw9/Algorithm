@@ -35,7 +35,7 @@ public class boj_2178_미로탐색 {
     static int count;
 
     public static void main(String[] args) throws IOException {
-        init(); 
+        init();
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
