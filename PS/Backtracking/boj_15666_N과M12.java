@@ -58,7 +58,6 @@ public class boj_15666_N과M12 {
           now[cnt] = arr[i];
           before = arr[i];
           dfs(i,cnt + 1);
-         // used[i] = true;
         }
       }
       }
