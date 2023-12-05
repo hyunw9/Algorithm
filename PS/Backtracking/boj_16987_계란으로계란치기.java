@@ -35,7 +35,7 @@ public class boj_16987_계란으로계란치기 {
   }
 
   public static void dfs(int cnt, int idx) {
-    //현재 든 계란이 가장 오른 쪽이거나, 다 깨졌으면 더이상 꺨 수 없다.
+    //현재 든 계란이 가장 오른 쪽 이거나, 다 깨졌으면 더이상 꺨 수 없다.
     if (idx == n) {
       max = Math.max(max, cnt);
       return;
@@ -78,7 +78,6 @@ public class boj_16987_계란으로계란치기 {
 
   public static void close() throws IOException {
     br.close();
-    bw.flush();
     bw.close();
   }
 
