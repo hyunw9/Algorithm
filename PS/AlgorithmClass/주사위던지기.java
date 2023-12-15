@@ -14,17 +14,14 @@ public class 주사위던지기 {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     n = Integer.parseInt(br.readLine());
-    answer = new int[n + 1];
-    k = n + 1;
-    dice(1);
+    answer = new int[n];
+    k = n ;
+    dice(0);
   }
 
   public static void dice(int depth) {
     if (depth == k) {
-      for (int i = 1; i <= n; i++) {
-        System.out.print(i + "번째: " + answer[i] + ", ");
-      }
-      System.out.println();
+      System.out.println(Arrays.toString(answer));
       return;
     }
 
