@@ -16,6 +16,8 @@ public class boj_1717_집합의표현 {
 
   public static void main(String[] args) throws IOException {
     init();
+    Long start = System.currentTimeMillis();
+
     StringTokenizer st = new StringTokenizer(br.readLine());
     int n = Integer.parseInt(st.nextToken());
     int m = Integer.parseInt(st.nextToken());
@@ -34,7 +36,7 @@ public class boj_1717_집합의표현 {
         union(a, b);
       } else if (ops.equals("1")) {
         //출력
-        if (find(a) == find(b)) {
+        if (find2(a) == find2(b)) {
           bw.write("yes");
         } else {
           bw.write("no");
@@ -42,6 +44,8 @@ public class boj_1717_집합의표현 {
         bw.write("\n");
       }
     }
+    Long end = System.currentTimeMillis();
+    System.out.println("(end-start)*0.001 = " + (end-start)*0.001);
     close();
   }
 
@@ -52,8 +56,16 @@ public class boj_1717_집합의표현 {
     return arr[a] = find(arr[a]);
   }
 
+
+  public static int find2(int a){
+    while(arr[a]!=a){
+      a = arr[a];
+    }
+    return a;
+  }
+
   public static void union(int x, int y) {
-    arr[find(y)] = find(x);
+    arr[find2(y)] = find2(x);
   }
 
   public static void init() {
