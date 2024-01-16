@@ -1,8 +1,9 @@
 package prgmrs.StackQueue;
+import java.util.*;
 
 public class 프로세스_422587 {
 
-  import java.util.*;
+
 
   class Solution { // location 은 2가 몇번쨰로 실행되는지 알기 위한 매개변수, 2,1,3,2 에서 3는 1번쨰, 1,1,9,1,1,1 에서 1은 5번째.
 
