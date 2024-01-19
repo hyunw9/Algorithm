@@ -1,4 +1,4 @@
-package prgmrs;
+package prgmrs.Greedy;
 
 import java.util.Arrays;
 

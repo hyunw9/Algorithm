@@ -1,4 +1,4 @@
-package prgmrs;
+package prgmrs.DP;
 
 public class 정수삼각형_43105 {
 
