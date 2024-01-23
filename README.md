@@ -1,2 +1,6 @@
-# BOJworkout
-백준 알고리즘 연습 레포
+# Algorithm practice
+
+### 활용한 플랫폼
+ 1. [백준](https://www.acmicpc.net)
+ 2. [프로그래머스](https://programmers.co.kr)
+ 3. [LeetCode](https://leetcode.com)
