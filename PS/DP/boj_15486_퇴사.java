@@ -18,6 +18,8 @@ public class boj_15486_퇴사 {
     //부분해가 최대 해가 되어야 함 .
     //
     int n = Integer.parseInt(br.readLine());
+    //T=1 일 경우에 그 다음날 보상을 받아야 한다.
+    //마지막 날에 T가 1일 경우, 그 다음날에 보상을 받아야 하므로 N + 1 만큼 배열을 선언해준다.
     int[][] arr = new int[n + 2][2];
     int[] dp = new int[n + 2];
     Arrays.fill(dp, 0);
@@ -33,6 +35,7 @@ public class boj_15486_퇴사 {
 
       if(next <n +2) {
         dp[next] = Math.max(dp[next], max+ arr[i][1]);
+        //여태 최대값 + 기존 보상
       }
     }
     for(int a : dp){
