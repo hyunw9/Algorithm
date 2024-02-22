@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class boj_16924_십자가찾2 {
@@ -13,10 +14,12 @@ public class boj_16924_십자가찾2 {
   private static BufferedWriter bw;
   private static int n;
   private static int m;
+  private static ArrayList<int[]> ans ;
 
   public static void main(String[] args) throws IOException {
     init();
     String line = br.readLine();
+    ans = new ArrayList<>();
     n = Integer.parseInt(line.split(" ")[0]);
     m = Integer.parseInt(line.split(" ")[1]);
     int[][] map = new int[n][m];
@@ -33,11 +36,11 @@ public class boj_16924_십자가찾2 {
       }
     }
     //System.out.println(find(map,2,4));
-
+    int size=0;
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         if (map[i][j] == 1) {
-          int size = find(used,map,i,j);
+           size = find(used,map,i,j);
           if(size == 0) continue;
 
 //
@@ -48,9 +51,16 @@ public class boj_16924_십자가찾2 {
     for(int i = 0 ; i < n; i++){
       for(int j = 0 ; j < m ;j++){
         if(used[i][j]) {
-          System.out.println(-1);
-          return;
+          size = -1;
         }
+      }
+    }
+    if(size == -1){
+      bw.write("-1");
+    }else{
+      bw.write(ans.size()+"\n");
+      for(int[]a : ans){
+        bw.write(a[0]+" "+a[1]+" "+a[2]+"\n");
       }
     }
     close();
@@ -60,7 +70,8 @@ public class boj_16924_십자가찾2 {
     int size = 1;
     while (x - size >= 0 && x + size < m && y - size >= 0 && y + size < n) {
         if (map[y][x + size] == 1 && map[y][x - size] == 1 && map[y + size][x] == 1 && map[y - size][x] == 1) {
-          bw.write((y+1)+" "+(x+1)+" "+ size+"\n");
+          ans.add(new int[]{y+1,x+1,size});
+          //bw.write((y+1)+" "+(x+1)+" "+ size+"\n");
           size++;
         }else{
           break;
