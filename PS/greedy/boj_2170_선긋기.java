@@ -41,21 +41,35 @@ public class boj_2170_선긋기 {
         return o1[0] - o2[0];
     });
     int cut = -1000000000;
-    for(int[] now: arr){
-      //System.out.println(cnt);
-      if(now[0] >= cut ){ //안 겹치거나
-        cut = now[1];
-        cnt += now[1] - now[0];
-      }else if( now[1] <= cut){ // 다 겹치거나
-        continue;
-      }else { //조금만 겹치거나 (삐죽 튀어나올 경우 )
-        int tmp = cut;//4
-        cut = Math.max(cut, now[1]);
-        cnt += now[1] - tmp;
+//    for(int[] now: arr){
+//      //System.out.println(cnt);
+//      if(now[0] >= cut ){ //안 겹치거나
+//        cut = now[1];
+//        cnt += now[1] - now[0];
+//      }else if( now[1] <= cut){ // 다 겹치거나
+//        continue;
+//      }else { //조금만 겹치거나 (삐죽 튀어나올 경우 )
+//        int tmp = cut;//4
+//        cut = Math.max(cut, now[1]);
+//        cnt += now[1] - tmp;
+//      }
+    int ans = 0 ;
+    for(int[] now : arr){
+      int start = now[0];
+      int end= now[1];
+      //아예 안겹칠경우,
+      //겹칠경우
+      //조금만 겹칠 경우
+      if(start > cut){
+        cut = end;
+        ans += end- start;
+      }else {
+        int tmp = cut;
+        cut = end;
+        ans+= end- tmp;
       }
-
     }
-    bw.write(cnt+"");
+    bw.write(ans+"");
     close();
   }
 
