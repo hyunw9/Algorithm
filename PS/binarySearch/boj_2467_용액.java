@@ -27,7 +27,33 @@ public class boj_2467_용액 {
     for(int i = 0; i<n; i++){
       arr[i] = Integer.parseInt(st.nextToken());
     }
-    int l = 0;
+    int answer =  Integer.MAX_VALUE;
+    int ansl = 0;
+    int ansr=0;
+    for(int i = 0 ; i < n;i++){
+      int now = arr[i];
+      int l =i+1;
+      int r = n-1;
+
+      while(l<=r){
+        int mid = (l+r)/2;
+
+        if(Math.abs(now+arr[mid])<=answer){
+          answer = Math.abs(now+arr[mid]);
+          ansl = i;
+          ansr = mid;
+        }
+
+        if(now+arr[mid]>0){
+          r= mid-1;
+        }else{
+          l = mid+1;
+        }
+      }
+    }
+    System.out.println(arr[ansl] + " "+ arr[ansr]);
+    /* 투포인터 풀이
+    * int l = 0;
     int r =  n-1;
     int answer= Integer.MAX_VALUE;
     int ansl=0;
@@ -51,9 +77,11 @@ public class boj_2467_용액 {
         l=l+1;
       }
     }
-    bw.write(arr[ansl] +" "+ arr[ansr]);
+    bw.write(arr[ansl] +" "+ arr[ansr]);*/
     close();
   }
+
+
 
   public static void init() {
     br = new BufferedReader(new InputStreamReader(System.in));
