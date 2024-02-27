@@ -40,7 +40,7 @@ public class boj_16987_계란으로계란치기2 {
     //현재 계란이 깨졌다면 오른쪽꺼 들고 dfs, 근데 그게 가장 오른쪽일 경우 종료
 
     if (curIdx == n) {
-      System.out.println(cnt);
+//      System.out.println(cnt);
       max = Math.max(cnt, max);
       return;
     } else if (durability[curIdx] <= 0||cnt == n-1) {
