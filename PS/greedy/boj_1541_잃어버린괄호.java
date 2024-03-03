@@ -1,73 +1,92 @@
 package PS.greedy;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 public class boj_1541_잃어버린괄호 {
-    static class hang {
-        int num;
-        char sign;
 
-        public hang(int num, char sign) {
+    private static BufferedReader br;
+    private static BufferedWriter bw;
+
+    public static class Num {
+        char op ;
+        int num;
+
+        public Num(char op,int num){
+            this.op = op;
             this.num = num;
-            this.sign = sign;
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        String s = st.nextToken();
-        StringBuilder num = new StringBuilder();
-        char sign = '+';
-        int sum = 0;
-        ArrayList<hang> arr = new ArrayList<>();
-        //항 클래스에 각각 부호와 숫자를 만들어 배열에 넣어줍니다.
-        //기본값은 + 부호
-        for (int i = 0; i < s.length(); i++) {
-            char now = s.charAt(i);
-            if (now == '-' || now == '+') {
-                arr.add(new hang(Integer.parseInt(String.valueOf(num)), sign));
-                num = new StringBuilder();
+        init();
+        String line = br.readLine();
+        Num[] arr = new Num[line.length()];
+        ArrayList<Num> list = new ArrayList<>();
+        char op ='+';
+        for(int i = 0;i< line.length();i++){
 
-                if (now == '-') {
-                    sign = '-';
-                } else {
-                    sign = '+';
+            if(i==0 || line.charAt(i)=='+'){
+                op = '+';
+            }else if(line.charAt(i)=='-'){
+                op = '-';
+            }
+            if(Character.isDigit(line.charAt(i))){
+                int j = i;
+                String a = "";
+
+                while(j<line.length()&&Character.isDigit(line.charAt(j))){
+                    a+=line.charAt(j++);
                 }
-            } else {
-                num.append(now);
 
+                list.add(new Num(op,Integer.parseInt(a)));
+                i=j;
             }
         }
-        // 80-20+30
+        int max = 0;
+        int total = 0;
+        for(int i = 0 ; i < list.size();i++){
 
-        //- 부호가 있으면 다른 - 를 만나기 전까지 +부호들을 -로 바꿔줍니다 (괄호 적용)
-        arr.add(new hang(Integer.parseInt(String.valueOf(num)), sign));
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i).sign == '-') {
-                for (int j = i + 1; j < arr.size(); j++) {
-                    if (arr.get(j).sign == '+') {
-                        arr.get(j).sign = '-';
-                    } else if (arr.get(j).sign == '-') {
-                        break;
+            Num now = list.get(i);
+            if(now.op == '-'){
+                int j = i;
+                int sum = 0;
+                while(j<list.size()){
+                    if(list.get(j).op=='+'){
+                        sum -= list.get(j).num;
+
+                    }else{
+                        sum += list.get(j).num;
                     }
+                    j++;
+                    System.out.println(sum);
                 }
+                if(sum> max){
+                    max = sum;
+                }
+            }else {
+                total += now.num;
             }
+            System.out.println(max);
         }
-        for (int i = 0; i < arr.size(); i++) {
-//            System.out.println("arr.get(i).sign = " + arr.get(i).sign);
-//            System.out.println("arr.get(i).num = " + arr.get(i).num);
-            if (arr.get(i).sign == '+') {
-                sum += arr.get(i).num;
-            } else {
-                sum -= arr.get(i).num;
-            }
-        }
-        System.out.println(sum);
+        bw.write((total - max)+"");
+//        for(int i = 0 ; i < list.size();i++){
+//            System.out.println(list.get(i).num);
+//        }
+        close();
+    }
 
+    public static void init() {
+        br = new BufferedReader(new InputStreamReader(System.in));
+        bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    }
+
+    public static void close() throws IOException {
+        br.close();
+        bw.close();
     }
 }

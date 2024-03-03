@@ -3,7 +3,7 @@ package PS.greedy;
 import java.util.Arrays;
 
 public class 섬연결하기_42861 {
-  
+
   public static int[] arr;
   public int solution(int n, int[][] costs) {
     int answer = 0;

@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class boj_14889_스타트와링크 {
@@ -16,7 +15,7 @@ public class boj_14889_스타트와링크 {
   private static int min = 987654321;
   private static int n;
   private static boolean[] used;
-
+ //1,2,3 | 4,5,6 ==>> 12+21 13+31 23+32
   public static void main(String[] args) throws IOException {
     init();
     n = Integer.parseInt(br.readLine());

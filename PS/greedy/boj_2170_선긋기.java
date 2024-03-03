@@ -60,12 +60,12 @@ public class boj_2170_선긋기 {
       //아예 안겹칠경우,
       //겹칠경우
       //조금만 겹칠 경우
-      if(start > cut){
+      if(start >= cut){
         cut = end;
         ans += end- start;
       }else {
         int tmp = cut;
-        cut = end;
+        cut = Math.max(cut,end);
         ans+= end- tmp;
       }
     }

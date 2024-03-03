@@ -1,7 +1,7 @@
 package prgmrs.완전탐색;
 
 public class 피로도_87946 {
-  
+
   public static int max = 0 ;
   public static int n = 0;
   public static boolean[] used;

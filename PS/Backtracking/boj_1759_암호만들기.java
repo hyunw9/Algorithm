@@ -51,7 +51,7 @@ public class boj_1759_암호만들기 {
       if(!used[i]) {
         if(depth > 0 && answer[depth-1]>arr[i]) continue;
         if(depth>l) continue;
-        used[i] = true;
+        used[i] = true;               
         answer[depth] = arr[i];
         if(answer[depth] == 'a' || answer[depth] == 'e'||answer[depth] == 'i'||answer[depth] == 'o'||answer[depth] == 'u'){
           dfs(depth + 1,weak+1,strong);

@@ -38,7 +38,6 @@ public class boj_1325_효율적인해킹 {
       boolean[] used = new boolean[n + 1];
       used[i] = true;
       q.add(i);
-
       while (!q.isEmpty()) {
         int now = q.poll();
         for (int next : arr[now]) {

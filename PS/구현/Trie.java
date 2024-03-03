@@ -2,7 +2,7 @@ package PS.구현;
 
 import java.util.HashMap;
 
-public class asd {
+public class Trie {
 
   private static int answer ;
 

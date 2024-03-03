@@ -1,5 +1,6 @@
 package PS.구현;
 
+import com.sun.jdi.connect.Connector;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,7 +18,6 @@ public class boj_1769_3의배수 {
       int number = 0;
       int num = 0;
       int cnt = 0;
-
       while (true) {
         int len = line.length();
         if(len == 1) {

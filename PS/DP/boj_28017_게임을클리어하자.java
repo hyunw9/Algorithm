@@ -1,47 +1,41 @@
-package PS.구현;
-
-import static java.lang.System.in;
-import static java.lang.System.out;
+package PS.DP;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class boj_1629_곱셈 {
+public class boj_28017_게임을클리어하자 {
 
   private static BufferedReader br;
   private static BufferedWriter bw;
 
-  private static long a;
-  private static long b;
-  private static long c;
-
   public static void main(String[] args) throws IOException {
     init();
     StringTokenizer st = new StringTokenizer(br.readLine());
+    int n = Integer.parseInt(st.nextToken());
+    int m = Integer.parseInt(st.nextToken());
+    int[] dp = new int[n];
+    Arrays.fill(dp,Integer.MAX_VALUE);
+    for(int i = 0 ; i < n; i++){
+      st = new StringTokenizer(br.readLine());
 
-    a = Long.parseLong(st.nextToken());
-    b = Long.parseLong(st.nextToken());
-    c = Long.parseLong(st.nextToken());
-
-    bw.write(pow(a, b) + "");
+      for(int j=0;j<m;j++){
+        int now = Integer.parseInt(st.nextToken());
+//        System.out.println("now: "+now);
+//        System.out.println(Arrays.toString(dp));
+          dp[j] = Math.min(dp[j], now);
+      }
+    }
+    int sum=0;
+    for(int v : dp){
+      sum+=v;
+    }
+    bw.write(sum+"");
     close();
-  }
-
-  public static long pow(long num, long exp) {
-    if (exp == 1) {
-      return num % c;
-    }
-    long temp = pow(num, exp / 2);
-
-    if (exp % 2 == 1) {
-      return (temp * temp % c) * num % c;
-    }
-    return temp * temp % c;
-
   }
 
   public static void init() {
@@ -53,6 +47,5 @@ public class boj_1629_곱셈 {
     br.close();
     bw.close();
   }
-
 
 }

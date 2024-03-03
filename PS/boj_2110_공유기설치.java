@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 import static java.lang.System.in;
 
 public class boj_2110_공유기설치 {
+    private static int a ;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -16,6 +17,7 @@ public class boj_2110_공유기설치 {
         int N = Integer.parseInt(st.nextToken());                                               //집 수
         int C = Integer.parseInt(st.nextToken());                                               //공유기 개수
         int[] arr = new int[N + 1];                                                             //배열
+        a = 12;
         int count = 0;                                                                          //설치 공유기 개수
         int answer = 0;                                                                         //정답용
         for (int i = 0; i < N; i++) {

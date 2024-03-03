@@ -11,6 +11,10 @@ public class 프로세스_422587 {
       int answer = 0;
       int curr = 0;
       int max = 0;
+      PriorityQueue<Integer> pq = new PriorityQueue<>();
+      while(!pq.iterator().hasNext()){
+
+      };
       for ( int i = 0 ; i < priorities.length ; i ++){
         if (priorities[i]>max) max=  priorities[i];
       }

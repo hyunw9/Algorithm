@@ -38,7 +38,7 @@ public class boj_1759_암호만들기2 {
 
   public static void dfs(int ja, int mo, String curr, int depth) throws IOException {
     if (depth == l && ja > 1 && mo > 0) {
-      
+
       bw.write(curr + "\n");
       return;
     }

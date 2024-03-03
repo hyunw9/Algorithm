@@ -22,8 +22,9 @@ public class boj_7662_이중우선순위큐 {
     int tc = Integer.parseInt(st.nextToken());
 
     for (int i = 0; i < tc; i++) {
-      TreeMap<Integer, Integer> map = new TreeMap<>();
-
+      HashMap<Integer, Integer> map = new HashMap<>();
+      PriorityQueue<Integer> min = new PriorityQueue<>((o1, o2) -> o1 - o2);
+      PriorityQueue<Integer> max = new PriorityQueue<>(Comparator.reverseOrder());
       st = new StringTokenizer(br.readLine());
       int t = Integer.parseInt(st.nextToken());
       for (int j = 0; j < t; j++) {
@@ -33,33 +34,60 @@ public class boj_7662_이중우선순위큐 {
         int num = Integer.parseInt(st.nextToken());
         if (ops.equals("I")) {
           map.put(num, map.getOrDefault(num, 0) + 1);
+          min.add(num);
+          max.add(num);
 
-
-        } else if (ops.equals("D")) {
+        } else {
           if (map.size() == 0) {
             continue;
           }
           if (num == 1) {
-            int key = map.lastKey();
-            if (map.put(key, map.get(key) - 1)==1) {
-              map.remove(key);
+            if (!max.isEmpty()) {
+              delete(max, map);
             }
-
           } else if (num == -1) {
-            int key = map.firstKey();
-            if (map.put(key, map.get(key) - 1)==1) {
-              map.remove(key);
+            if (!min.isEmpty()) {
+              delete(min, map);
             }
           }
         }
       }
-      if (map.size()==0) {
+      if (min.isEmpty() || max.isEmpty()) {
         bw.write("EMPTY\n");
       } else {
-        bw.write(map.lastKey() + " " + map.firstKey() + "\n");
+        int maxV = delete(max, map);
+        bw.write(maxV + " ");
+        if (map.size() > 0) {
+          bw.write(delete(min, map)+"");
+        } else {
+          bw.write(maxV + "");
+        }
       }
     }
     close();
+
+  }
+  
+
+  public static int delete(PriorityQueue<Integer> pq, HashMap<Integer, Integer> map) {
+    int num = 0;
+    while (true) {
+        num = pq.poll();
+        int cnt = map.getOrDefault(num, 0);
+        if (cnt == 0) {
+          continue;
+        }
+        if (cnt == 1) {
+          map.remove(num);
+        } else {
+          map.put(num, cnt - 1);
+        }
+
+        break;
+      }
+
+
+    return num;
   }
 
   public static void init() {

@@ -90,7 +90,6 @@ public class boj_16924_십자가찾기 {
       }
       else if (map[y][pnx] == '*' && map[y][mnx] == '*' && map[pny][x] == '*' && map[mny][x] == '*') {
         if(cnt>0) arr.add(new int[]{y + 1, x + 1, cnt});
-    System.out.println("cnt: "+ cnt+ " y : "+ y + "x : "+ x);
         cnt++;
 //        cnt++;
       } else {

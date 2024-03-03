@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class boj_10844_쉬운계단수 {
 
@@ -13,14 +14,38 @@ public class boj_10844_쉬운계단수 {
 
     public static void main (String[] args) throws IOException{
         init();
-        int N = Integer.parseInt(br.readLine());
-        int[] dp = new int[N+1];
-        dp[0] = 0;
-        dp[1] = 9;
-        for (int i = 2; i <= N; i++) {
-            dp[i] = dp[i-1] + (dp[i-2]*2)-i;
+        int size = Integer.parseInt(br.readLine());
+        long[][] dp = new long[size][10];
+        for(int i = 0 ; i< 10; i++){
+            if(i>0) dp[0][i] = 1;
+            else dp[0][i] = 0;
         }
-        bw.write(dp[N]%1000000000+"");
+        for(int i = 1 ; i < size; i ++){
+            for(int j = 0 ; j<dp[i].length; j++){
+
+                if(j+1>=dp[i].length) {
+                    dp[i][j] =( dp[i-1][j-1])%1000000000;
+                }else if(j>0){
+                    dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1])%1000000000;
+                }else {
+
+                     dp[i][j] = (dp[i-1][j+1])%1000000000;
+                }
+
+            }
+        }
+        long sum = 0;
+        for(long a : dp[size-1]){
+            sum+=a;
+        }
+        //System.out.println(Arrays.deepToString(dp));
+
+        //      0 1 2 3 4 5 6 7 8 9
+        // 1    0 1 1 1 1 1 1 1 1 1
+        // 2    1 1 2 2 2 2 2 2 2 1
+        // 3    1 3 3 4 4 4 4 4 3 2
+        // 4
+        bw.write(sum%1000000000+"");
         close();
     }
 

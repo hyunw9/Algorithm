@@ -10,11 +10,10 @@ public class boj_9663_NQueen2 {
 
   private static BufferedReader br;
   private static BufferedWriter bw;
-  private static boolean[] ga;
-  private static boolean[] se;
-  private static boolean[] jd;
-  private static boolean[] ud;
-  private static int[][] map;
+  private static boolean[] ga; //가로
+  private static boolean[] jd; //좌대각선
+  private static boolean[] ud; //우대각선
+//  private static int[][] map;
   private static int n;
   private static int answer;
   public static void main(String[] args) throws IOException {
@@ -22,10 +21,9 @@ public class boj_9663_NQueen2 {
     n = Integer.parseInt(br.readLine());
 
     ga = new boolean[n];
-    se = new boolean[n];
     jd = new boolean[2*n];
     ud = new boolean[2*n];
-    map = new int[n][n];
+//    map = new int[n][n];
     dfs(0);
     bw.write(answer+"");
     close();
@@ -36,14 +34,14 @@ public class boj_9663_NQueen2 {
       answer++;
     }
     for(int i = 0 ; i <n;i++){
-     if(!ga[i]&&!jd[depth+i]&&!ud[n-depth+i]){
+     if(!ga[i]&&!jd[depth+i]&&!ud[n-(depth+i)-1]){
        ga[i]=true;
        jd[depth+i] = true;
-       ud[n-depth+i] = true;
+       ud[n-(depth+i)-1] = true;
        dfs(depth+1);
        ga[i]=false;
        jd[depth+i] = false;
-       ud[n-depth+i] = false;
+       ud[n-(depth+i)-1] = false;
      }
     }
   }
