@@ -29,8 +29,8 @@ public class boj_16926_배열돌리기 {
     int [][] answer = new int[n][m];
     int len = Math.min(m,n)/2;
     while(--t>=0) {
-      for(int j=0; j<len; j++) { //라인들 전부 돌리기
-        int temp = map[j][j]; //맨 마지막에 넣기 위해 따로 저장!!!!배열에서 원소 위치 바꿀때 하나를 temp에 저장해두는거랑 같은 원리
+      for(int j=0; j<len; j++) {
+        int temp = map[j][j];
 
         for(int k=j+1; k<m-j; k++)
           map[j][k-1] = map[j][k];
