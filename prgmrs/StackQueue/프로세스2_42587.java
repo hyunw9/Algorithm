@@ -4,7 +4,6 @@ import java.util.ArrayDeque;
 
 public class 프로세스2_42587 {
 
-  import java.util .*;
 
   class Solution {
 
