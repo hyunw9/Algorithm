@@ -43,7 +43,7 @@ public class boj_16562_친구비 {
 
     }
 //    Set<Integer> set = new HashSet<>(); 이 부분이 문제,
-    //부모의 경우만 값을 추가해주면 된다. 문제 이해도가 틀린 이유  
+    //부모의 경우만 값을 추가해주면 된다. 문제 이해도가 틀린 이유
     for(int i = 1 ; i <=n ; i++){
       if(arr[i]==i){
         ans +=map.get(i);
