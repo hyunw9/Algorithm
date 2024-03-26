@@ -1,4 +1,4 @@
-package PS.구현;
+package PS.Implementation;
 
 import com.sun.jdi.connect.Connector;
 import java.io.BufferedReader;

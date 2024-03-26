@@ -1,4 +1,4 @@
-package PS.구현;
+package PS.Implementation;
 
 import static java.lang.System.in;
 import static java.lang.System.out;

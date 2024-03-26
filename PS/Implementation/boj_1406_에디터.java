@@ -1,4 +1,4 @@
-package PS.구현;
+package PS.Implementation;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
