@@ -1,6 +1,5 @@
-package PS.leetCode.ArraysHashing;
+package leetCode.ArraysHashing;
 
-import java.util.HashMap;
 import java.util.TreeMap;
 
 public class Longest_Consecutive_Sequence {

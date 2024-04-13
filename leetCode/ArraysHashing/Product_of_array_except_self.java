@@ -1,4 +1,4 @@
-package PS.leetCode.ArraysHashing;
+package leetCode.ArraysHashing;
 
 public class Product_of_array_except_self {
   class Solution {

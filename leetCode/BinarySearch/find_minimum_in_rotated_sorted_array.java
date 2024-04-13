@@ -1,4 +1,4 @@
-package PS.leetCode.BinarySearch;
+package leetCode.BinarySearch;
 
 public class find_minimum_in_rotated_sorted_array {
 

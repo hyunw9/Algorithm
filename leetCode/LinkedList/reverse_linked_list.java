@@ -1,4 +1,4 @@
-package PS.leetCode.LinkedList;
+package leetCode.LinkedList;
 
 public class reverse_linked_list {
 

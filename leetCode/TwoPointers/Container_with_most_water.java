@@ -1,4 +1,4 @@
-package PS.leetCode.TwoPointers;
+package leetCode.TwoPointers;
 
 public class Container_with_most_water {
   class Solution {

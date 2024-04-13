@@ -1,4 +1,4 @@
-package PS.leetCode.SlidingWindow;
+package leetCode.SlidingWindow;
 
 public class best_time_to_buy_and_sell {
 
