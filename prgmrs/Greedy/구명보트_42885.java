@@ -1,5 +1,7 @@
 package prgmrs.Greedy;
 
+import java.util.Arrays;
+
 public class 구명보트_42885 {
 
   public int solution(int[] people, int limit) {

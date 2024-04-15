@@ -24,7 +24,6 @@ public class boj_11052_카드구매하기 {
             int max = 0;
             for(int j = 1; j<=div;j++){
                 max = Math.max(dp[j] + dp[i-j],max);
-                // dp[i] = Math.max(arr[i],dp[div]+dp[i-div]);
             }
             dp[i] = Math.max(max,arr[i]);
         }

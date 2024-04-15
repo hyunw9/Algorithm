@@ -3,7 +3,7 @@ import java.util.*;
 public class 베스트앨범_42579 {
 
   class Solution {
-    private static class Song{
+    private class Song{
       int times;
       int idx;
       public Song(int times, int idx){
@@ -11,7 +11,7 @@ public class 베스트앨범_42579 {
         this.idx = idx;
       }
     }
-    private static class Stat{
+    private  class Stat{
       String genre;
       int cnt;
       public Stat(String genre,int cnt){

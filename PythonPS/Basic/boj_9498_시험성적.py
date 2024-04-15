@@ -8,6 +8,6 @@ elif int(a)>=80 and int(a)<=89:
 elif int(a) >= 70 and int(a) <= 79:
     print('C')
 elif int(a)>=60 and int(a)<=69:
-    print('E')
+    print('D')
 else:
     print('F')

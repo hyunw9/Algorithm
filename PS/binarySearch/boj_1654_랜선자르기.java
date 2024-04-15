@@ -50,7 +50,7 @@ public class boj_1654_랜선자르기 {
       }
 
     }
-    bw.write(max+"");
+    bw.write(h+"");
     close();
   }
 
