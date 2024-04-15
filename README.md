@@ -1,6 +1,6 @@
 # Algorithm practice
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=백준아이디)](https://solved.ac/rkdgusdnr32/)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=rkdgusdnr32)](https://solved.ac/rkdgusdnr32/)
 
 
 ### 활용한 플랫폼
