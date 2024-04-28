@@ -35,7 +35,7 @@ public class boj_19598_최소회의실개수 {
         rooms.add(curr[1]);
        }
         bw.write(rooms.size()+"");
-        // 코드를 작성하세요.
+
         close();
     }
 
