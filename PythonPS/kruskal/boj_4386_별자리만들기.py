@@ -2,8 +2,6 @@ import sys
 import math
 from collections import deque
 
-
-
 def find(x):
     global arr
     if arr[x] == x:
