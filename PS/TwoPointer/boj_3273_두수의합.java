@@ -22,7 +22,7 @@ public class boj_3273_두수의합 {
         //초과시 r --;
         //미달시 l ++;
         Arrays.sort(arr);
-        while(l <= r){
+        while(l < r){
 
             int sum = arr[l]+arr[r];
 
