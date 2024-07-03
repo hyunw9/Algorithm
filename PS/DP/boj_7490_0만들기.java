@@ -26,7 +26,7 @@ public class boj_7490_0만들기 {
       for(String answer : ans){
         bw.write(answer+"\n");
       }
-    //   bw.write("\n");
+      bw.write("\n");
     }
 
     close();

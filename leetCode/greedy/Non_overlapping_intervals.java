@@ -1,12 +1,11 @@
 package leetCode.greedy;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Non_overlapping_intervals {
   public int eraseOverlapIntervals(int[][] intervals) {
     int n = intervals.length;
     Arrays.sort(intervals, (o1, o2) -> Integer.compare(o1[1], o2[1]));
-
     int count = 1;
     int prev = 0;
 

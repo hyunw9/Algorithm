@@ -1,3 +1,5 @@
+package leetCode.greedy;
+
 import java.util.ArrayList;
 import java.util.List;
 

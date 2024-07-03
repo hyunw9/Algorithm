@@ -15,8 +15,6 @@ def dfs(y,x,dir):
                 return
     else:
         dfs(ny,nx,keyMap[ny][nx])
-    # print(dirMap[dir])
-    # print(f"curr: {dir} next: {keyMap[ny][nx]} (ny,nx): {ny} {nx}")
 
 n,m = map(int,sys.stdin.readline().split())
 dirMap ={'U':(-1,0), 'D':(1,0),'L':(0,-1),'R':(0,1)}

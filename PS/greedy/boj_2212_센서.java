@@ -19,7 +19,7 @@ public class boj_2212_센서 {
             arr[i]= Integer.parseInt(st.nextToken());
         }
         Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
+        // System.out.println(Arrays.toString(arr));
         //1,3,6,7,9
         //k-1번 쪼갤수 있고, 설치가 가능한데, 어디서 쪼개야 최적의 값일까? 
         //차이가 큰데를 쪼개야함

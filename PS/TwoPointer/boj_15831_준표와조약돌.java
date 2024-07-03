@@ -19,14 +19,12 @@ public class boj_15831_준표와조약돌 {
         // left 가 늘어나는 시점은 b개수가 초과할 경우. 윈도우를 이동해야한다. 
         int l = 0;
         int r = 0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        map.put('W',0);
-        map.put('B',0);
+        
         int wcnt = 0;
         int bcnt = 0;
         while(l<=r && r < n){
            
-            
+        
             if(road[r]=='B'){
                 bcnt+=1;
             }else{
@@ -48,7 +46,6 @@ public class boj_15831_준표와조약돌 {
                 maxSize = Math.max(maxSize,winsize);
             }
             r++;
-
             //max 갱신은 B, W 조건 검증 이후에 . 
         }
         System.out.println(maxSize);

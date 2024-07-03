@@ -33,12 +33,13 @@ public class boj_6497_전력난 {
         pq.add(new int[] {f, t, c});
       }
       Collections.sort(pq, (o1, o2) -> o1[2] - o2[2]);
+      sum = 0;
       for (int[] curr : pq) {
 
         int a = curr[0];
         int b = curr[1];
         int cost = curr[2];
-        sum =0;
+
         if (find(a) != find(b)) {
           union(a, b);
           sum += cost;

@@ -1,4 +1,4 @@
-package PS.부분합;
+package PS.binarySearch;
 
 import java.io.*;
 import java.util.*;
@@ -15,18 +15,15 @@ public class boj_11663_선분위의점 {
         int m = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
         arr= new int [n];
+        Arrays.sort(arr);
         for(int i = 0; i < n ; i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        //부분합 ? 
         for(int i = 0 ; i < m ; i++){
             st = new StringTokenizer(br.readLine());
             int start = Integer.parseInt(st.nextToken());
             int end = Integer.parseInt(st.nextToken());
             bw.write(binarySearch(end,true)-binarySearch(start,false)+"\n");
-
-
-            
         }
         close();
     }

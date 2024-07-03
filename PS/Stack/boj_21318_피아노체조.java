@@ -8,8 +8,7 @@ public class boj_21318_피아노체조 {
     private static BufferedWriter bw;
     private static int[] arr;
     public static void main(String[] args) throws IOException {
-        init();
-        //모노스택 ? 
+        init(); 
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         arr = new int[n+1];
@@ -41,7 +40,6 @@ public class boj_21318_피아노체조 {
         close();
     }
 
-    
 
     private static void init() throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));

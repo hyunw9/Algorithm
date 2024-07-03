@@ -5,3 +5,6 @@
 .JavaPS.iml
 pros.java
 /.out/*
+/out/
+*.ipynb
+*.json
