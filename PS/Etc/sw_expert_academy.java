@@ -1,4 +1,4 @@
-package PS;
+package PS.Etc;
 
 
 import java.util.Scanner;

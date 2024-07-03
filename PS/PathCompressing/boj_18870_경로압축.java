@@ -1,4 +1,4 @@
-package PS.경로압축;
+package PS.PathCompressing;
 
 import java.io.*;
 import java.util.*;

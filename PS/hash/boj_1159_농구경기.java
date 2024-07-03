@@ -1,4 +1,4 @@
-package PS.hash;
+package PS.Hash;
 
 import java.io.*;
 import java.util.*;

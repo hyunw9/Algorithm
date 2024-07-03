@@ -1,4 +1,4 @@
-package PS.DP;
+package PS.Dp;
 
 import java.io.BufferedReader;
 import java.io.IOException;

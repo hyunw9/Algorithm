@@ -1,4 +1,4 @@
-package PS.binarySearch;
+package PS.BinarySearch;
 
 import java.sql.Array;
 import java.util.ArrayList;

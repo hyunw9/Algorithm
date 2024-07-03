@@ -1,23 +1,16 @@
-package PS.Dp;
+package PS.TopologicalSort;
 
 import java.io.*;
 import java.util.*;
-public class boj_2193_이친수 {
+
+public class boj_2623_음악프로그램 {
 
     private static BufferedReader br;
     private static BufferedWriter bw;
 
     public static void main(String[] args) throws IOException {
         init();
-        int n= Integer.parseInt(br.readLine());
-
-        long[] arr = new long[91];
-        arr[0] = 0;
-        arr[1]= 1;
-        for(int i = 2; i<=90; i++){
-            arr[i] = arr[i-1] + arr[i-2];
-        }
-        bw.write(arr[n]+"");
+        // 코드를 작성하세요.
         close();
     }
 

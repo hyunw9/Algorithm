@@ -1,4 +1,4 @@
-package PS;
+package PS.Etc;
 
 import java.io.IOException;
 import java.util.ArrayDeque;

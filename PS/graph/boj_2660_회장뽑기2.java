@@ -1,4 +1,4 @@
-package PS.graph;
+package PS.Graph;
 
 import java.io.BufferedReader;
 import java.io.IOException;

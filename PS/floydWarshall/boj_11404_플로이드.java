@@ -1,4 +1,4 @@
-package PS.floydWarshall;
+package PS.FloydWarshall;
 
 import java.io.BufferedReader;
 import java.io.IOException;

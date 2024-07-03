@@ -1,4 +1,4 @@
-package PS.DFS;
+package PS.Dfs;
 
 import static java.lang.System.in;
 import static java.lang.System.out;

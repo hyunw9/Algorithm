@@ -1,4 +1,4 @@
-package PS.binarySearch;
+package PS.BinarySearch;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

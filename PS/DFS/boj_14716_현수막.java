@@ -1,4 +1,4 @@
-package PS.DFS;
+package PS.Dfs;
 
 import java.io.*;
 import java.util.*;

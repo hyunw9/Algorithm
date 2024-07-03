@@ -1,4 +1,4 @@
-package PS.graph;
+package PS.Graph;
 
 import static java.lang.System.in;
 import static java.lang.System.out;

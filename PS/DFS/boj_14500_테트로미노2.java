@@ -1,4 +1,4 @@
-package PS.DFS;
+package PS.Dfs;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,4 +1,4 @@
-package PS.kakao;
+package PS.Kakao;
 
 import java.util.HashMap;
 

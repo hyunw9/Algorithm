@@ -1,4 +1,4 @@
-package PS;
+package PS.Etc;
 
 import java.io.*;
 import java.util.*;
