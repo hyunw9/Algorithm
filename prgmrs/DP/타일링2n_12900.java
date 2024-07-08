@@ -1,9 +1,8 @@
 package prgmrs.DP;
+import java.util.*;
 
-public class 2n타일링_12900 {
-    import java.util.*;
+public class 타일링2n_12900 {
 
-class Solution {
     public int solution(int n) {
         //n == 1
         //  1 
@@ -26,5 +25,5 @@ class Solution {
         // System.out.println(Arrays.toString(dp));
         return dp[n];
     }
-
 }
+
