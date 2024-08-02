@@ -15,7 +15,7 @@ public class boj_2960_에라토스테네스의체 {
     int m = Integer.parseInt(st.nextToken());
 
     boolean[] arr = new boolean[n + 1];
-    Arrays.fill(arr,true);
+    Arrays.fill(arr, true);
     arr[0] = true;
     arr[1] = true;
 
@@ -24,17 +24,16 @@ public class boj_2960_에라토스테네스의체 {
     for (int i = 2; i <= n; i++) {
 
       if (arr[i] == true) {
-        for (int j = i; j <= n; j = j+i) {
-            if(arr[j]==true){
-          cnt += 1;
-          System.out.println(j);
-          arr[j] = false;
-          if (cnt == m) {
-            answer = j;
+        for (int j = i; j <= n; j = j + i) {
+          if (arr[j] == true) {
+            cnt += 1;
+            //   System.out.println(j);
+            arr[j] = false;
+            if (cnt == m) {
+              answer = j;
+            }
           }
         }
-        }
-        
       }
     }
 
