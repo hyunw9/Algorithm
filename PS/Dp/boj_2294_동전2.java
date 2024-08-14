@@ -15,7 +15,7 @@ public class boj_2294_동전2 {
     int k = Integer.parseInt(st.nextToken());
     int[] coins = new int[n];
     int[] dp = new int[k + 1];
-    Arrays.fill(dp,987654321);
+    Arrays.fill(dp, 987654321);
     dp[0] = 0;
     for (int i = 0; i < n; i++) {
       int val = Integer.parseInt(br.readLine());
@@ -31,22 +31,22 @@ public class boj_2294_동전2 {
       for (int coin : coins) {
         // System.out.println("coin: " + coin);
         if (coin <= i) {
-            
-            if(i==coin){
-                dp[i]= 1;
-            }
+
+          if (i == coin) {
+            dp[i] = 1;
+          }
           dp[i] = Math.min(dp[i], dp[coin] + dp[(i - coin)]);
         } else {
           break;
         }
       }
-    //   System.out.println("i: " + i + " val : " + val);
+      //   System.out.println("i: " + i + " val : " + val);
     }
     // System.out.println(Arrays.toString(dp));
-    if(dp[k]>10000){
-        System.out.println(-1);
-    }else{
-        System.out.println(dp[k]);
+    if (dp[k] > 10000) {
+      System.out.println(-1);
+    } else {
+      System.out.println(dp[k]);
     }
     close();
   }
