@@ -16,8 +16,8 @@ public class boj_4485_녹색옷입은애가젤다지 {
     while (true) {
 
       int n = Integer.parseInt(br.readLine());
-      
-      if( n == 0) break;
+
+      if (n == 0) break;
 
       int[][] map = new int[n][n];
       for (int i = 0; i < n; i++) {
@@ -31,9 +31,9 @@ public class boj_4485_녹색옷입은애가젤다지 {
         Arrays.fill(res[i], Integer.MAX_VALUE);
       }
 
-      PriorityQueue<int[]> q = new PriorityQueue<>((o1,o2)->o1[2]-o2[2]);
+      PriorityQueue<int[]> q = new PriorityQueue<>((o1, o2) -> o1[2] - o2[2]);
       res[0][0] = map[0][0];
-      q.add(new int[] {0, 0,map[0][0]});
+      q.add(new int[] {0, 0, map[0][0]});
       while (!q.isEmpty()) {
         int[] p = q.poll();
         // System.out.println(Arrays.toString(p));
@@ -55,7 +55,7 @@ public class boj_4485_녹색옷입은애가젤다지 {
           }
         }
       }
-      System.out.println(String.format("Problem %d: %d",count,res[n-1][n-1]));
+      System.out.println(String.format("Problem %d: %d", count, res[n - 1][n - 1]));
       count++;
     }
     close();
