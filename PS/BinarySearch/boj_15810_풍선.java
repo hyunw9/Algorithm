@@ -14,7 +14,7 @@ public class boj_15810_풍선 {
         int m = Integer.parseInt(st.nextToken());
         int[] bal = new int[n];
         st = new StringTokenizer(br.readLine());
-        int high = 0;
+        long high = 0;
         long min = 1;
 
         for(int i = 0; i < n ; i++){
