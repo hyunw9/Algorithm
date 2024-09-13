@@ -60,7 +60,7 @@ public class boj_4803_트리 {
             }else if(pset.size()-cycle ==1){
                 bw.write(String.format("Case %d: There is one tree.",idx));
             }else{
-                bw.write(String.format("Case %d: A forest of %d trees.",idx,set.size()-cycle));
+                bw.write(String.format("Case %d: A forest of %d trees.",idx,pset.size()-cycle));
             }
             bw.write("\n");
             idx+=1;
@@ -100,5 +100,6 @@ public class boj_4803_트리 {
 }
 
 /*
-** 간략한 풀이 :
+** 간략한 풀이 : 사이클 처리가 문제였다..
+* 엣지케이스를 더 꼼꼼히 체크해야겠다. 
 */
