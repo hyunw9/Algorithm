@@ -41,12 +41,11 @@ public class boj_1189_컴백홈 {
 
     private static void dfs(int y , int x, int count){
 
-        System.out.println("y : " + y + " x : "+ x );
+        // System.out.println("y : " + y + " x : "+ x );
         if(y== 0 && x == m-1){
             if(count == k){
                 cnt+=1;
             }
-
             return;
         }
 
@@ -77,5 +76,5 @@ public class boj_1189_컴백홈 {
 }
 
 /*
-** 간략한 풀이 :
+** 간략한 풀이 : 평범한 dfs
 */
