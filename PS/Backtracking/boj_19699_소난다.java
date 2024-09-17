@@ -43,7 +43,7 @@ public class boj_19699_소난다 {
         if(depth == m){
             if(curr <=1) return;
             else {
-                for(int i =2; i<Math.sqrt(curr); i++){
+                for(int i =2; i<=(int)Math.sqrt(curr); i++){
                     if(curr % i == 0){
                         return;
                     }
