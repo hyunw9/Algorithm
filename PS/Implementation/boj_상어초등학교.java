@@ -113,7 +113,7 @@ public class boj_상어초등학교 {
         }
       }
     }
-    print();
+    // print();
     System.out.println(sum);
     close();
   }
