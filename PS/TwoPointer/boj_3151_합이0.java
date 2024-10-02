@@ -20,7 +20,7 @@ public class boj_3151_합이0 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         //양옆을 하나씩 줄이면서, 이분탐색 ? 
-        int answer =0;
+        long answer =0;
         // System.out.println(binarySearch(0,arr.length,3));
         Arrays.sort(arr);
         
