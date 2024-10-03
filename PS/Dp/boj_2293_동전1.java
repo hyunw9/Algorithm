@@ -24,8 +24,7 @@ public class boj_2293_동전1 {
                 dp[j] += dp[j-coins[i]];
             }
         }
-
-        System.out.println(Arrays.toString(dp));
+        // System.out.println(Arrays.toString(dp));
         System.out.println(dp[k]);
         close();
     }
