@@ -1,83 +1,63 @@
 package PS.Greedy;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 public class boj_1541_잃어버린괄호 {
 
     private static BufferedReader br;
     private static BufferedWriter bw;
 
-    public static class Num {
-        char op ;
-        int num;
-
-        public Num(char op,int num){
-            this.op = op;
-            this.num = num;
-        }
-    }
+    
 
     public static void main(String[] args) throws IOException {
         init();
         String line = br.readLine();
-        Num[] arr = new Num[line.length()];
-        ArrayList<Num> list = new ArrayList<>();
-        char op ='+';
-        for(int i = 0;i< line.length();i++){
+        char[] arr = line.toCharArray();
 
-            if(i==0 || line.charAt(i)=='+'){
-                op = '+';
-            }else if(line.charAt(i)=='-'){
-                op = '-';
-            }
-            if(Character.isDigit(line.charAt(i))){
-                int j = i;
-                String a = "";
-
-                while(j<line.length()&&Character.isDigit(line.charAt(j))){
-                    a+=line.charAt(j++);
+        int idx = 0;
+        int sum =0;
+        boolean flag = false;
+        StringBuilder sb = new StringBuilder();
+        while(idx <arr.length){
+            
+            if(arr[idx]>='0' && arr[idx]<='9'){
+                sb.append(arr[idx]);
+            }else{
+                String strnum = sb.toString(); 
+                int num =0; 
+                if(!strnum.isEmpty()){
+                    num = Integer.parseInt(strnum);
                 }
+                sb.setLength(0);
+                if(flag){
+                    sum += num*-1;
+                }else{
+                    sum += num;
+                }
+                System.out.println(sum);
 
-                list.add(new Num(op,Integer.parseInt(a)));
-                i=j;
-            }
-        }
-        int max = 0;
-        int total = 0;
-        for(int i = 0 ; i < list.size();i++){
-
-            Num now = list.get(i);
-            if(now.op == '-'){
-                int j = i;
-                int sum = 0;
-                while(j<list.size()){
-                    if(list.get(j).op=='+'){
-                        sum -= list.get(j).num;
-
-                    }else{
-                        sum += list.get(j).num;
+                if(arr[idx] == '+'){
+                    if(flag == true){
+                        flag = true;
                     }
-                    j++;
-                    System.out.println(sum);
+                }else if(arr[idx]=='-'){
+                    if(flag == true){
+                        flag = true;
+                    }else if(flag == false){
+                        flag = true;
+                    }
                 }
-                if(sum> max){
-                    max = sum;
-                }
-            }else {
-                total += now.num;
             }
-            System.out.println(max);
+
+            idx+=1;
         }
-        bw.write((total - max)+"");
-//        for(int i = 0 ; i < list.size();i++){
-//            System.out.println(list.get(i).num);
-//        }
-        close();
+        if(flag){
+            sum += -Integer.parseInt(sb.toString());
+        }else{
+            sum += Integer.parseInt(sb.toString());
+        }
+        System.out.println(sum);
     }
 
     public static void init() {
