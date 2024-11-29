@@ -1,4 +1,3 @@
-
 select name
 from (select name, s.id, salary
      from packages as p , students as s
